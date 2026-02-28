@@ -1,11 +1,11 @@
 # REST API
 resource "aws_api_gateway_rest_api" "tasks_api" {
-  name        = "tasks_api"
+  name        = var.lambda_function_name
   description = "REST API for tasks"
 
   tags = {
-    Name        = "tasks_api"
-    Environment = "dev"
+    Name        = var.lambda_function_name
+    Environment = var.stage_name
   }
 }
 

@@ -1,15 +1,15 @@
 resource "aws_dynamodb_table" "tasks" {
-    name = "tasks"
-    billing_mode = "PAY_PER__REQUEST"
+    name = var.table_name
+    billing_mode = "PAY_PER_REQUEST"
     hash_key = "task_id"
 
-    atrribute {
+    attribute {
         name = "task_id"
         type = "S"
     }
 
     tags = {
-        Name = "tasks"
+        Name = var.table_name
         Environment = "dev"
     }
 }
